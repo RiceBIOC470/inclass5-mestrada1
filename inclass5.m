@@ -20,9 +20,9 @@ j = imadjust(img, stretchlim(img), [0.01 0.99]);
 id = imshow(j);
 
 %(b). Function shown here and included in a separate file
-% this doesn't work as expected. It decreases rather than 
+% AW:this doesn't work as expected. It decreases rather than 
 %increases contrast with increasing x. 
-% should be j = imadjust(img, stretchlim(img), [x 1-x]);
+% should be j = imadjust(img, stretchlim(img, [x 1-x]));
 % -0.2.
 
 function id = imagechange2(img, x) 
