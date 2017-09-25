@@ -1,3 +1,5 @@
+%AW: see comments below. 0.78/1.
+
 %Inclass assignment 5. 
 
 % 1. (a) Write a function that reads in an image and displays it so that 1%
@@ -18,6 +20,10 @@ j = imadjust(img, stretchlim(img), [0.01 0.99]);
 id = imshow(j);
 
 %(b). Function shown here and included in a separate file
+% this doesn't work as expected. It decreases rather than 
+%increases contrast with increasing x. 
+% should be j = imadjust(img, stretchlim(img), [x 1-x]);
+% -0.2.
 
 function id = imagechange2(img, x) 
 x=x/100;
@@ -25,7 +31,7 @@ j = imadjust(img, stretchlim(img), [x 1-x]);
 id = imshow(j);
 
 %(c). Function shown here and included in a separate file
-
+%AW: Default should be 0.01, not 1. -0.02.
 function id = imagechange3(img, x)
 if ~exist('x' , 'var')
     x=1;
